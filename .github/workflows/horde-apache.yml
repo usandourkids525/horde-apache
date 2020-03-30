@@ -13,11 +13,6 @@ on:
   # Run tests for any PRs.
   pull_request:
 
-  registry_package:
-    - published
-    - updated
-
-
 env:
   IMAGE_NAME: horde-apache
 
