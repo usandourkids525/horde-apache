@@ -20,6 +20,12 @@ env:
   IMAGE_NAME: horde-apache
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo event_name
+        run: echo "Name: ${{ github.event_name }}, Path: ${{ github.event_path }}, Event: ${{ github.event }}"
   # Run tests.
   # See also https://docs.docker.com/docker-hub/builds/automated-testing/
   #test:
