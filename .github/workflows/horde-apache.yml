@@ -12,6 +12,9 @@ on:
 
   # Run tests for any PRs.
   pull_request:
+  
+  repository_dispatch:
+    types: [horde-composer-docker-updated]
 
 env:
   IMAGE_NAME: horde-apache
@@ -19,24 +22,24 @@ env:
 jobs:
   # Run tests.
   # See also https://docs.docker.com/docker-hub/builds/automated-testing/
-  test:
-    runs-on: ubuntu-latest
+  #test:
+  #  runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+  #  steps:
+  #    - uses: actions/checkout@v2
 
-      - name: Log into registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+  #    - name: Log into registry
+  #      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
-      - name: Run tests
-        run: |
-          docker build . --file Dockerfile
+   #   - name: Run tests
+   #     run: |
+   #       docker build . --file Dockerfile
 
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   push:
     # Ensure test job passes before pushing image.
-    needs: test
+    #needs: test
 
     runs-on: ubuntu-latest
     if: github.event_name == 'push' || github.event_name == 'horde-composer-docker-updated'
