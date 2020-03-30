@@ -12,7 +12,7 @@ on:
 
   # Run tests for any PRs.
   pull_request:
-  
+
   repository_dispatch:
     types: [horde-composer-docker-updated]
 
@@ -24,8 +24,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Echo event_name
-        run: echo "Name: ${{ github.event_name }}, Path: ${{ github.event_path }}, Event: ${{ github.event }}"
+      - name: Echo event data
+        run: echo "Name ${{ github.event_name }}, Path ${{ github.event_path }}, Event ${{ github.event }}"
   # Run tests.
   # See also https://docs.docker.com/docker-hub/builds/automated-testing/
   #test:
@@ -62,7 +62,7 @@ jobs:
       - name: Push image
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
-          
+
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
 
