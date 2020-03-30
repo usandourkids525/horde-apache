@@ -12,6 +12,9 @@ on:
 
   # Run tests for any PRs.
   pull_request:
+  
+  repository_dispatch:
+    types: [horde-composer-docker-updated]
 
 env:
   IMAGE_NAME: horde-apache
