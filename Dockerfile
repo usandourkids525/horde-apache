@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/ikselven/horde-composer-docker/horde-composer-docker:latest
+FROM docker.pkg.github.com/maintain-com/horde-composer-docker/horde-composer-docker:latest
 
 RUN zypper --non-interactive install --no-confirm apache2 apache2-mod_php7 \
     && zypper clean -a \
