@@ -16,6 +16,9 @@ on:
   repository_dispatch:
     types: [horde-composer-docker-updated]
 
+    schedule:
+      - cron: '30 0 * * *'
+
 env:
   IMAGE_NAME: horde-apache
 
