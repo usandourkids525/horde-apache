@@ -8,6 +8,10 @@ The image does not come with a Horde configuration file.
 
 ## How to Use the Image
 
+You may need to login your docker installation to the Github Packages registry: 
+
+https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages
+
 To build a another image on top of this one, use the following in your `Dockerfile`:
 ```Docker
 FROM docker.pkg.github.com/maintaina-com/horde-apache/horde-apache:latest
