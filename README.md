@@ -20,6 +20,6 @@ FROM docker.pkg.github.com/maintaina-com/horde-apache/horde-apache:latest
 
 To start a container based on this image, run:
 ```bash
-docker run -d -p 8080:80 --name my-horde-apache docker.pkg.github.com/maintaina-com/horde-composer-docker/horde-apache:latest
+docker run -d -p 8080:80 --name my-horde-apache docker.pkg.github.com/maintaina-com/horde-apache/horde-apache:latest
 ```
 Then, navigate to `localhost:8080` in your browser to access Horde.
